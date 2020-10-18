@@ -39,6 +39,7 @@
     ]
   },
   "devDependencies": {
-    "eslint": "^6.6.0"
+    "eslint": "^6.6.0",
+    "webpack-bundle-tracker": "^1.0.0-alpha.1"
   }
 }
