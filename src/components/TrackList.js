@@ -1,11 +1,11 @@
-import React, { useContext } from 'react';
+import React from 'react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlay, faPause } from '@fortawesome/free-solid-svg-icons';
 import useMusicPlayer from '../hooks/useMusicPlayer';
 
 const TrackList = () => {
-	const { togglePlay, trackList, currentTrackName, playTrack, isPlaying } = useMusicPlayer();
+	const { trackList, currentTrackName, playTrack, isPlaying } = useMusicPlayer();
 
 	return (
 		<>
