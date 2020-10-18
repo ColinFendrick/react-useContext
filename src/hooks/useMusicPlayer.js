@@ -8,11 +8,19 @@ const useMusicPlayer = () => {
 		if (ix === state.currentTrackIndex) {
 			togglePlay();
 		} else {
+			state.audioPlayer.pause();
+			state.audioPlayer = new Audio(state.tracks[ix].file);
+			state.audioPlayer.play();
 			setState(state => ({ ...state, currentTrackIndex: ix, isPlaying: true }));
 		}
 	};
 
 	const togglePlay = () => {
+		if (state.isPlaying) {
+			state.audioPlayer.pause();
+		} else {
+			state.audioPlayer.play();
+		}
 		setState(state => ({ ...state, isPlaying: !state.isPlaying }));
 	};
 

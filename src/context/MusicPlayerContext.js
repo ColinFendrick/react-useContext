@@ -1,20 +1,30 @@
 import React, { useState } from 'react';
+import ANewBeginning from '../assets/bensound-anewbeginning.mp3';
+import Ukelele from '../assets/bensound-ukulele.mp3';
+import CreativeMinds from '../assets/bensound-creativeminds.mp3';
 
 const MusicPlayerContext = React.createContext([{}, () => {}]);
 
 const MusicPlayerProvider = (props) => {
+
 	const [state, setState] = useState({
+		audioPlayer: new Audio(),
 		tracks: [
 			{
-				name: 'The Mountain Goats - Picture of My Dress'
+				name: 'Ukelele',
+				file: Ukelele
 			},
 			{
-				name: 'Black Thought - Good Morning'
+				name: 'Creative Minds',
+				file: CreativeMinds
 			},
 			{
-				name: 'Jay Electronica - New Illuminati'
+				name: 'A New Beginning',
+				file: ANewBeginning
 			}
-		]
+		],
+		currentTrackIndex: null,
+		isPlaying: false
 	});
 	return (
 		<MusicPlayerContext.Provider value={[state, setState]}>
