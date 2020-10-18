@@ -11,7 +11,7 @@ const Controls = () => {
 		<>
 			<div className='box controls has-background-grey-dark'>
 				<div className='current-track has-text-light'>
-					<div className='marquee'>
+					<div className={`marquee ${isPlaying ? 'is-playing' : 'not-playing'}`}>
 						<p>{currentTrackName}</p>
 					</div>
 				</div>

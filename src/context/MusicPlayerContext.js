@@ -6,13 +6,13 @@ const MusicPlayerProvider = (props) => {
 	const [state, setState] = useState({
 		tracks: [
 			{
-				name: 'Lost Chameleon - Genesis'
+				name: 'The Mountain Goats - Picture of My Dress'
 			},
 			{
-				name: 'The Hipsta - Shaken Soda'
+				name: 'Black Thought - Good Morning'
 			},
 			{
-				name: 'Tobu - Such Fun'
+				name: 'Jay Electronica - New Illuminati'
 			}
 		]
 	});
