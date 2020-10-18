@@ -91,7 +91,7 @@
   },
   "devDependencies": {
     "eslint": "^6.6.0",
-    "webpack-bundle-tracker": "^1.0.0-alpha.1"
+    "webpack-bundle-tracker": "0.4.3"
   },
   "jest": {
     "roots": [
