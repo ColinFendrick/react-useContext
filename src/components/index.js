@@ -1,5 +1,6 @@
+import AddSong from './AddSong';
 import Home from './Home';
 import PlayerControls from './PlayerControls';
 import TrackList from './TrackList';
 
-export { Home, PlayerControls, TrackList };
+export { AddSong, Home, PlayerControls, TrackList };

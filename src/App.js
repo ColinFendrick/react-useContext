@@ -3,7 +3,7 @@ import { Switch, Route, Link } from 'react-router-dom';
 
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Home, TrackList, PlayerControls } from './components';
+import { Home, TrackList, PlayerControls, AddSong } from './components';
 import { MusicPlayerProvider } from './context/MusicPlayerContext';
 
 const Player = () => (
@@ -32,6 +32,12 @@ const App = () => {
 							</Link>
 						</li>
 
+						<li className = 'nav-item'>
+							<Link to = {'/addsong'} className = 'nav-link'>
+									Add Song
+							</Link>
+						</li>
+
 					</div>
 				</nav>
 			</div>
@@ -40,6 +46,7 @@ const App = () => {
 				<Switch>
 					<Route exact path='/' component={Home} />
 					<Route path='/musicplayer' component={Player} />
+					<Route path='/addsong' component={AddSong} />
 				</Switch>
 			</div>
 

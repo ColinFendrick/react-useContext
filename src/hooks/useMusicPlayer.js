@@ -1,6 +1,8 @@
 import { useContext } from 'react';
 import { MusicPlayerContext } from '../context/MusicPlayerContext';
 
+import Ukelele from '../assets/bensound-ukulele.mp3';
+
 const useMusicPlayer = () => {
 	const [state, setState] = useContext(MusicPlayerContext);
 
@@ -34,8 +36,14 @@ const useMusicPlayer = () => {
 		playTrack(newIndex);
 	};
 
+	const addSong = ({ name }) => {
+		const newTracks = state.tracks.concat({ name, file: Ukelele });
+		setState(state => ({ ...state, tracks: newTracks }));
+	};
+
 
 	return {
+		addSong,
 		playTrack,
 		togglePlay,
 		currentTrackName: state.currentTrackIndex !== null && state.tracks[state.currentTrackIndex]?.name,
