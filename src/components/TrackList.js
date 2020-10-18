@@ -1,13 +1,21 @@
 import React, { useContext } from 'react';
 
-import { MusicPlayerContext } from '../context/MusicPlayerContext';
+import { faPlay, faPause, FontAwesomeIcon } from '@fortawesome/fontawesome-free';
+import useMusicPlayer from '../hooks/useMusicPlayer';
 
 const TrackList = () => {
-	const [state, setState] = useContext(MusicPlayerContext);
+	const { togglePlay, trackList, currentTrackName, playTrack, isPlaying } = useMusicPlayer();
+
 	return (
-		<button onClick={() => setState(state => ({ ...state, name: 'Clicked!' }))}>
-			{state.name}
-		</button>
+		<>
+			{trackList.map((track, ix) => (
+				<div className='box' key={ix}>
+					<div className='song-title' onClick={togglePlay}>
+						{track.name}
+					</div>
+				</div>
+			))}
+		</>
 	);
 };
 
